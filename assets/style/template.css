@@ -1,0 +1,304 @@
+:root {
+    --fundo-darck: #282E33;
+    --fundo-light: #F3F1F5;
+    --color-light: #FFF;
+    --color-darck: #304455;
+    --border-light: #1E90FF;
+    --gradiente-light: linear-gradient(90deg, rgba(216,31,38,0.4) 0%, rgba(243,241,245,1) 71%);
+    --gradiente-darck: linear-gradient(90deg, rgba(216,31,38,0.4) 0%, rgba(40,46,51,1) 71%);
+    --red-defalt: #D81F26;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+body {
+    background-color: var(--fundo-light);
+    color: var(--color-darck);
+}
+
+.container {
+    margin: auto;
+    width: 100%;
+    height: 100vh;
+    background-color: var(--fundo-light);
+    display: flex;
+}
+
+.icon-menu img {
+    width: 35px;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    display: none;
+}
+aside {
+    width: 20%;
+    height: 100vh;
+    border-right: 1px #ccc solid;
+    padding-top: 35px;
+    background-color: var(--fundo-light);
+    transition: all 0.3s linear;
+}
+
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    width: 40px;
+    margin-right: 10px;
+}
+
+.logo {
+    margin-bottom: 40px;
+    padding-left: 35px;
+}
+
+.menu-left ul, 
+.menu-left li {
+    list-style: none;
+}
+
+.item-menu {
+    text-decoration: none;
+    padding: 15px;
+    padding-left: 35px;
+    display: flex;
+    align-items: center;
+    color: var(--color-darck);
+    font-size: 12px;
+    font-weight: bold;
+    text-align: start;
+    
+}
+
+.item-menu:hover,
+.item-menu.selected {
+    background: var(--red-defalt);
+    background: var(--gradiente-light);
+}
+
+
+.item-menu img {
+    width: 30px;
+    margin-right: 5px;
+}
+
+main {
+    width: 100%;
+    border-right: 1px #ccc solid;
+    padding: 35px 25px
+}
+
+main .subtitle {
+    margin-top: 3px;
+    color: var(--color-darck);
+    font-weight: bold;
+    font-size: 13px;
+}
+
+.template{
+    background: var(--color-light);
+    width: 100%;
+    height: auto;
+    margin-top: 40px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-around;
+    padding: 20px 10px;
+    padding-bottom: 0;
+    flex-wrap: wrap;
+    
+}
+
+.box-aposta,
+.box-casa,
+.box-comissao,
+.box-valorInvestido,
+.box-odd,
+.box-lucro {
+    height: auto;
+    margin-bottom: 20px;
+    text-align: center;
+    
+}
+
+.box-aposta,
+.box-casa {
+    min-width: 140px;
+}
+
+.box-valorInvestido,
+.box-lucro {
+    min-width: 114px;
+}
+
+.box-comissao,
+.box-odd {
+    max-width: 85px;
+}
+
+.box-odd {
+    min-width: 85px;
+}
+
+.box-input {
+    width: inherit;
+}
+.template .title {
+    text-align: center;
+    color: var(--color-darck);
+    margin-bottom: 20px;
+}
+
+.template .box-input input,
+.template .box-input select,
+.template .box-input .campoComissao,
+.template .box-input .campolucro {
+    width: 100%;
+    height: 30px;
+    display: block;
+    margin-bottom: 20px;
+    border-radius: 15px;
+    border: solid 1px var(--fundo-light);
+    outline: none;
+    background: var(--fundo-light);
+    text-align: center;
+    font-size: 13px;
+}
+
+.template .box-input input:hover {
+    border: solid 1px var(--border-light);
+}
+
+.template .box-input input:focus {
+    border: solid 1px var(--border-light);
+}
+
+.fechar {
+    display: none;
+}
+
+.abrir {
+    display: flex;
+    opacity: 100%;
+}
+
+.resultados {
+    margin-top: 40px;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.box-resultados {
+    width: 250px;
+    height: auto;
+    background: var(--color-light);
+    border-radius: 20px;
+    margin-bottom: 20px;
+}
+
+.box-resultados .title {
+    text-align: center;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.info-res {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 70px;
+}
+
+
+@media (max-width: 1344px) {
+    .box-resultados {
+        width: 40%;
+        margin-bottom: 40px;
+    }
+}
+
+@media (max-width: 1000px) {
+    aside {
+        position: absolute;
+        left: 0;
+        width: 50vw;
+        transform: translateX(-100%);
+    }
+    .menu-off {
+        transform: translateX(-100%);
+    }
+    
+    .menu-on {
+        transform: translateX(0%);
+    }
+    .icon-menu img {
+        display: block;
+        z-index: 99;
+    }
+    
+}
+
+@media (max-width: 830px) {
+    .box-aposta,
+    .box-casa {
+        min-width: 35%;
+    }
+
+    .box-valorInvestido,
+    .box-lucro {
+        min-width: 35%;
+    }
+
+    .box-comissao,
+    .box-odd {
+        min-width: 20%;
+    }
+}
+
+@media (max-width: 500px) {
+    .box-aposta,
+    .box-casa {
+        min-width: 45%;
+    }
+
+    .box-valorInvestido,
+    .box-lucro {
+        min-width: 45%;
+    }
+
+    .box-comissao,
+    .box-odd {
+        min-width: 35%;
+    }
+}
+
+@media (max-width: 400px) {
+    .box-aposta,
+    .box-casa {
+        min-width: 45%;
+        max-width: 45%;
+    }
+
+    .box-valorInvestido,
+    .box-lucro {
+        min-width: 45%;
+        max-width: 45%;
+    }
+
+    .box-comissao,
+    .box-odd {
+        min-width: 45%;
+        max-width: 45%;
+    }
+}
