@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/style/template.css">
+    <title>Surebet Vip</title>
+</head>
+<body>
+    
+    <div class="container">
+        <div class="icon-menu">
+            <img onclick="menuOpen()" src="assets/images/Icons/menu-aberto.png" alt="">
+        </div>
+        <aside class="menu-off">
+            <div class="logo">
+                <img src="assets/images/Icons/bola-de-futebol.png" alt="">
+                <h4>Surebet Vip</h4>
+            </div>
+            <div class="menu-left">
+                <ul>
+                    <div class="title-menu"><span>Calcular com:</span></div>
+                    <li><a id="duasentradas" onclick="modal2()" class="item-menu selected" href="#"><img src="assets/images/Icons/2.png" alt="">Entradas</a></li>
+                    <li><a id="tresentradas" onclick="modal1()" class="item-menu" href="#"><img src="assets/images/Icons/3.png" alt="" >Entradas</a></li>
+                </ul>
+            </div>
+        </aside>
+        <main>
+            <div class="header">
+                <div class="title">
+                    <h2>Calculadora</h2>
+                </div>
+                <div class="subtitle">
+                    <span>2 entradas</span>
+                </div>
+            </div>
+
+            <section class="section-modal">
+                <div class="template modal1 fechar">
+                    <div class="box-aposta">
+                        <div class="title">Aposta</div>
+                        <div class="box-input">
+                            <input type="text" id="aposta1">
+                            <input type="text" id="aposta2">
+                            <input type="text" id="aposta3">
+                        </div>
+                    </div>
+                    <div class="box-casa">
+                        <div class="title">Casa</div>
+                        <div class="box-input">
+                            <select id="casa1">
+                                <option >Bet365</option>
+                                <option >Nordeste Bola</option>
+                                <option >TNT</option>
+                                <option >Play Bets</option>
+                                <option >Play Vip</option>
+                                <option >Bets Bola</option>
+                                <option >999Bet</option>
+                                <option >999Vip</option>
+                                <option >Porto Bet</option>
+                            </select>
+                            <select id="casa2">
+                                <option >Bet365</option>
+                                <option >Nordeste Bola</option>
+                                <option >TNT</option>
+                                <option >Play Bets</option>
+                                <option >Play Vip</option>
+                                <option >Bets Bola</option>
+                                <option >999Bet</option>
+                                <option >999Vip</option>
+                                <option >Porto Bet</option>
+                            </select>
+                            <select id="casa3">
+                                <option >Bet365</option>
+                                <option >Nordeste Bola</option>
+                                <option >TNT</option>
+                                <option >Play Bets</option>
+                                <option >Play Vip</option>
+                                <option >Bets Bola</option>
+                                <option >999Bet</option>
+                                <option >999Vip</option>
+                                <option >Porto Bet</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="box-comissao">
+                        <div class="title">Comissão</div>
+                        <div class="box-input">
+                            <div class="campoComissao" id="comissao1"> </div>
+                            <div class="campoComissao" id="comissao2"> </div>
+                            <div class="campoComissao" id="comissao3"> </div>
+                        </div>
+                    </div>
+                    <div class="box-valorInvestido">
+                        <div class="title">Vl. Investido</div>
+                        <div class="box-input">
+                            <input type="number" id="valorInvestido1" min="1">
+                            <div class="campo-valor-investido" id="valorInvestido2"> </div>
+                            <div class="campo-valor-investido" id="valorInvestido3"> </div>
+                        </div>
+                    </div>
+                    <div class="box-odd">
+                        <div class="title">Odd</div>
+                        <div class="box-input">
+                            <input type="number" id="odd1" min="1">
+                            <input type="number" id="odd2" min="1">
+                            <input type="number" id="odd3" min="1">
+                        </div>
+                    </div>
+                    <div class="box-lucro">
+                        <div class="title">Lucro</div>
+                        <div class="box-input">
+                            <div class="campolucro" id="lucro1"> </div>
+                            <div class="campolucro" id="lucro2"> </div>
+                            <div class="campolucro" id="lucro3"> </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="template modal2 abrir">
+                    <div class="box-aposta">
+                        <div class="title">Aposta</div>
+                        <div class="box-input">
+                            <input type="text" id="modal2-aposta1">
+                            <input type="text" id="modal2-aposta2">
+                        </div>
+                    </div>
+                    <div class="box-casa">
+                        <div class="title">Casa</div>
+                        <div class="box-input">
+                            <select oninput="casaUm()" id="modal2-casa1">
+                                <option >Selecione uma Casa</option>
+                                <option >Bet365</option>
+                                <option >Nordeste Bola</option>
+                                <option >TNT</option>
+                                <option >Play Bets</option>
+                                <option >Play Vip</option>
+                                <option >Bets Bola</option>
+                                <option >999Bet</option>
+                                <option >999Vip</option>
+                                <option >Porto Bet</option>
+                            </select>
+                            <select oninput="casaDois()" id="modal2-casa2">
+                                <option >Selecione uma Casa</option>
+                                <option >Bet365</option>
+                                <option >Nordeste Bola</option>
+                                <option >TNT</option>
+                                <option >Play Bets</option>
+                                <option >Play Vip</option>
+                                <option >Bets Bola</option>
+                                <option >999Bet</option>
+                                <option >999Vip</option>
+                                <option >Porto Bet</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="box-comissao">
+                        <div class="title">Comissão</div>
+                        <div class="box-input">
+                            <div class="campoComissao" id="modal2-comissao1"> </div>
+                            <div class="campoComissao" id="modal2-comissao2"> </div>
+                        </div>
+                    </div>
+                    <div class="box-valorInvestido">
+                        <div class="title">Vl. Investido</div>
+                        <div class="box-input">
+                            <input onclick="TransfValorInvestido(event)" onkeyup="TransfValorInvestido(event)" type="number" id="modal2-valorInvestido1" min="1">
+                            <div class="campo-valor-investido" id="modal2-valorInvestido2">R$ 0,00</div>
+                        </div>
+                    </div>
+                    <div class="box-odd">
+                        <div class="title">Odd</div>
+                        <div class="box-input">
+                            <input onclick="Transfodd1()" onkeyup="Transfodd1(event)" type="number" id="modal2-odd1" >
+                            <input onclick="Transfodd2()" onkeyup="Transfodd2()" type="number" id="modal2-odd2" >
+                        </div>
+                    </div>
+                    <div class="box-lucro">
+                        <div class="title">Lucro</div>
+                        <div class="box-input">
+                            <div class="campolucro" id="modal2-lucro1">R$ 0,00</div>
+                            <div class="campolucro" id="modal2-lucro2">R$ 0,00</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="resultados">
+                <div class="box-resultados">
+                    <div class="title">Total Investido</div>
+                    <div class="info-res">
+                        <span class="res" id="total-investido">R$ 0,00</span>
+                    </div>
+                </div>
+                <div class="box-resultados">
+                    <div class="title">Lucro Líquido</div>
+                    <div class="info-res">
+                        <span class="res" id="lucro-liquido">R$ 0,00</span>
+                    </div>
+                </div>
+                <div class="box-resultados">
+                    <div class="title">Comissão Total</div>
+                    <div class="info-res">
+                        <span class="res" id="comissao-total">R$ 0,00</span>
+                    </div>
+                </div>
+                <div class="box-resultados">
+                    <div class="title">Lucro Líquido + Comissão</div>
+                    <div class="info-res">
+                        <span class="res" id="lucro-comissao">R$ 0,00</span>
+                    </div>
+                </div>
+
+            </section>
+        </main>
+    </div>
+
+    <script src="assets/js/script.js"></script>
+</body>
+</html>
