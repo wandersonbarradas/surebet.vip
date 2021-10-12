@@ -209,14 +209,18 @@ function calculoGeral() {
         }
     }
     //Calculando o Valor ivestido da operação 2 modal 2 (Lucro da operação 1 / Pela odd da operação 2) e fazendo aparecer na tela
-    valorInvestido2 = acharLucroCasa1 / odd2Transf;
+    if(odd2Transf <=0) {
+        document.querySelector('#modal2-valorInvestido2').innerHTML = `R$ 0,00`
+    }else {
+        valorInvestido2 = acharLucroCasa1 / odd2Transf;
     if(isNaN(valorInvestido2)){
         document.querySelector('#modal2-valorInvestido2').innerHTML = `R$ 0,00`
     }else {
         document.querySelector('#modal2-valorInvestido2').innerHTML = `R$ ${valorInvestido2.toFixed(2)}`
     }
+    }
     //acando o lucro da operação 2 (valor investido da operação 2 X odd da operação 2) e fazendo aparecer na tela
-    acharLucroCasa2 = valorInvestido2 * odd2Transf;
+   acharLucroCasa2 = valorInvestido2 * odd2Transf;
     if(isNaN(acharLucroCasa2)){
         document.querySelector('#modal2-lucro2').innerHTML = `R$ 0,00`
     }else {
