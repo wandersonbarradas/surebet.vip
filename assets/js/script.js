@@ -140,7 +140,7 @@ function casaDois() {
             valoecomissao2 = 15;
             break;
         case 'Porto Bet':
-            valoecomissao2 = 20.5;
+            valoecomissao2 = 20;
             break;
     }
     
