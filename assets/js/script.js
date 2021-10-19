@@ -68,44 +68,12 @@ function modal2() {
 
 
 //Setando as % e fazendo aparecer na tela
-let valorselected;
 let valoecomissao1 = 0;
 function casaUm() {
     
-    valorselected = $('#modal2-casa1').value;
-    switch(valorselected) {
-        case 'Selecione':
-            valoecomissao1 = 0;
-            break;
-        case 'Bet365':
-            valoecomissao1 = 0;
-            break;
-        case 'Nordeste Bola':
-            valoecomissao1 = 3;
-            break;
-        case 'Play Bets':
-            valoecomissao1 = 5;
-            break;
-        case 'TNT':
-            valoecomissao1 = 7;
-            break;
-        case 'Play Vip':
-            valoecomissao1 = 10;
-            break;
-        case 'Bets Bola':
-            valoecomissao1 = 10;
-            break;
-        case '999Bet':
-            valoecomissao1 = 10;
-            break;
-        case '999Vip':
-            valoecomissao1 = 15;
-            break;
-        case 'Porto Bet':
-            valoecomissao1 = 20;
-            break;
-    }
-    
+    valoecomissao1 = $('#modal2-casa1').value;
+    valoecomissao1 = parseFloat(valoecomissao1);
+ 
     $('#modal2-comissao1').innerHTML = valoecomissao1 + '%';
     if (valoecomissao1 == 0) {
         $('#modal2-comissao1').style.border = 'solid 1px var(--red-defalt)'
@@ -114,85 +82,57 @@ function casaUm() {
         $('#modal2-comissao1').style.border = 'solid 1px var(--fundo-light)'
         $('#modal2-comissao1').style.color = 'var(--color-darck)'
     }
-    calculoGeral()
-}
+    //calculoGeral()
+};
 
-let valorselected2;
+
 let valoecomissao2 = 0;
-
 function casaDois() {
     
-    valorselected2 = $('#modal2-casa2').value;
-
-    switch(valorselected2) {
-        case 'Selecione':
-            valoecomissao2 = 0;
-            break;
-        case 'Bet365':
-            valoecomissao2 = 0;
-            break;
-        case 'Nordeste Bola':
-            valoecomissao2 = 3;
-            break;
-        case 'Play Bets':
-            valoecomissao2 = 5;
-            break;
-        case 'TNT':
-            valoecomissao2 = 7;
-            break;
-        case 'Play Vip':
-            valoecomissao2 = 10;
-            break;
-        case 'Bets Bola':
-            valoecomissao2 = 10;
-            break;
-        case '999Bet':
-            valoecomissao2 = 10;
-            break;
-        case '999Vip':
-            valoecomissao2 = 15;
-            break;
-        case 'Porto Bet':
-            valoecomissao2 = 20;
-            break;
-    }
+    valoecomissao2 = $('#modal2-casa2').value;
+    valoecomissao2 = parseFloat(valoecomissao2);
     
     $('#modal2-comissao2').innerHTML = valoecomissao2 + '%';
     if (valoecomissao2 == 0) {
-        $('#modal2-comissao2').style.border = 'solid 1px var(--red-defalt)'
-        $('#modal2-comissao2').style.color = 'var(--red-defalt)'
+        $('#modal2-comissao2').style.border = 'solid 1px var(--red-defalt)';
+        $('#modal2-comissao2').style.color = 'var(--red-defalt)';
     } else {
-        $('#modal2-comissao2').style.border = 'solid 1px var(--fundo-light)'
-        $('#modal2-comissao2').style.color = 'var(--color-darck)'
+        $('#modal2-comissao2').style.border = 'solid 1px var(--fundo-light)';
+        $('#modal2-comissao2').style.color = 'var(--color-darck)';
     }
     calculoGeral()
-}
+};
+
+
 //manipulando o valor investido da 1° operação
 let valorInvestido1 = 0;
-let valorInvestido1Transf = 0;
 function TransfValorInvestido() {
 
     valorInvestido1 = $('#modal2-valorInvestido1').value;
-    valorInvestido1Transf = parseFloat(valorInvestido1)
+    valorInvestido1 = parseFloat(valorInvestido1);
     calculoGeral()
-}
+};
+
+
 //manipulando a odd da 1° operação
 let acharodd1 = 0;
-let odd1Transf = 0;
 function Transfodd1() {
 
     acharodd1 = $('#modal2-odd1').value;
-    odd1Transf = parseFloat(acharodd1)
+    acharodd1 = parseFloat(acharodd1);
     calculoGeral()
-}
+};
+
+
 //manipulando a odd da 2° operação
 let acharodd2 = 0;
-let odd2Transf = 0;
 function Transfodd2() {
     acharodd2 = $('#modal2-odd2').value;
-    odd2Transf = parseFloat(acharodd2)
+    acharodd2 = parseFloat(acharodd2);
     calculoGeral()
-}
+};
+
+
 //calculos gerais
 let acharLucroCasa1 = 0;
 let valorInvestido2 = 0;
@@ -206,12 +146,12 @@ let lucroLiquidoComissao = 0;
 function calculoGeral() {
 
     //Calculando o Lucro da Operação 1 modal 2 (Valor Investido da Operação 1 X Odd Da Operação 1 ) e fazendo aparecer na tela
-    acharLucroCasa1 = valorInvestido1Transf * odd1Transf;
+    acharLucroCasa1 = valorInvestido1 * acharodd1;
     if(isNaN(acharLucroCasa1)){
         $('#modal2-lucro1').innerHTML = `R$ 0,00`
     }else {
         $('#modal2-lucro1').innerHTML = `R$ ${acharLucroCasa1.toFixed(2)}`
-        if(acharLucroCasa1 < valorInvestido1Transf) {
+        if(acharLucroCasa1 < valorInvestido1) {
             $('#modal2-lucro1').style.border = 'solid 1px var(--red-defalt)'
             $('#modal2-lucro1').style.color = 'var(--red-defalt)'
 
@@ -222,10 +162,10 @@ function calculoGeral() {
     }
     
     //Calculando o Valor ivestido da operação 2 modal 2 (Lucro da operação 1 / Pela odd da operação 2) e fazendo aparecer na tela
-    if(odd2Transf <=0) {
+    if(acharodd2 <=0) {
         $('#modal2-valorInvestido2').innerHTML = `R$ 0,00`
     }else {
-        valorInvestido2 = acharLucroCasa1 / odd2Transf;
+        valorInvestido2 = acharLucroCasa1 / acharodd2;
     if(isNaN(valorInvestido2)){
         $('#modal2-valorInvestido2').innerHTML = `R$ 0,00`
     }else {
@@ -235,7 +175,7 @@ function calculoGeral() {
     
     
     //Calculando o lucro da operação 2 (valor investido da operação 2 X odd da operação 2) e fazendo aparecer na tela
-    acharLucroCasa2 = valorInvestido2 * odd2Transf;
+    acharLucroCasa2 = valorInvestido2 * acharodd2;
     if(isNaN(acharLucroCasa2)){
         $('#modal2-lucro2').innerHTML = `R$ 0,00`
     }else {
@@ -252,7 +192,7 @@ function calculoGeral() {
 
     //calculando o total do valor investido (Valor investido da operação 1 + Valor investido da operação 2) e fazendo aparecer na tela
 
-    totalInvestido = valorInvestido1Transf + valorInvestido2;
+    totalInvestido = valorInvestido1 + valorInvestido2;
     if(isNaN(totalInvestido)){
         $('#total-investido').innerHTML = `R$ 0,00`
     }else {
@@ -331,7 +271,7 @@ function limparDados() {
     $('#comissao-total').style.color = 'var(--color-dark)'
     $('#lucro-liquido').style.fontWeight = 'normal'
     $('#lucro-liquido').style.color = 'var(--color-dark)'
-}
+};
 
 
 
@@ -343,43 +283,11 @@ function limparDados() {
 //CODIGOS DO MODAL 1 CALCULO COM TRES ENTRADAS
 
 //Setando as % e fazendo aparecer na tela
-let valorSelectedModal1;
 let valorComissaoMOdal1 = 0;
 function casaUmModal1() {
     
-    valorSelectedModal1 = $('#casa1').value;
-    switch(valorSelectedModal1) {
-        case 'Selecione':
-            valorComissaoMOdal1 = 0;
-            break;
-        case 'Bet365':
-            valorComissaoMOdal1 = 0;
-            break;
-        case 'Nordeste Bola':
-            valorComissaoMOdal1 = 3;
-            break;
-        case 'Play Bets':
-            valorComissaoMOdal1 = 5;
-            break;
-        case 'TNT':
-            valorComissaoMOdal1 = 7;
-            break;
-        case 'Play Vip':
-            valorComissaoMOdal1 = 10;
-            break;
-        case 'Bets Bola':
-            valorComissaoMOdal1 = 10;
-            break;
-        case '999Bets':
-            valorComissaoMOdal1 = 10;
-            break;
-        case '999Vip':
-            valorComissaoMOdal1 = 15;
-            break;
-        case 'Porto Bet':
-            valorComissaoMOdal1 = 20;
-            break;
-    }
+    valorComissaoMOdal1 = $('#casa1').value;
+    valorComissaoMOdal1 = parseFloat(valorComissaoMOdal1);
     
     $('#comissao1').innerHTML = valorComissaoMOdal1 + '%';
     if (valorComissaoMOdal1 == 0) {
@@ -393,45 +301,11 @@ function casaUmModal1() {
 }
 
 
-
-let valorselected2Modal1;
 let valoecomissao2Modal1 = 0;
 function casaDoisModal1() {
     
-    valorselected2Modal1 = $('#casa2').value;
-
-    switch(valorselected2Modal1) {
-        case 'Selecione':
-            valoecomissao2Modal1 = 0;
-            break;
-        case 'Bet365':
-            valoecomissao2Modal1 = 0;
-            break;
-        case 'Nordeste Bola':
-            valoecomissao2Modal1 = 3;
-            break;
-        case 'Play Bets':
-            valoecomissao2Modal1 = 5;
-            break;
-        case 'TNT':
-            valoecomissao2Modal1 = 7;
-            break;
-        case 'Play Vip':
-            valoecomissao2Modal1 = 10;
-            break;
-        case 'Bets Bola':
-            valoecomissao2Modal1 = 10;
-            break;
-        case '999Bets':
-            valoecomissao2Modal1 = 10;
-            break;
-        case '999Vip':
-            valoecomissao2Modal1 = 15;
-            break;
-        case 'Porto Bet':
-            valoecomissao2Modal1 = 20;
-            break;
-    }
+    valoecomissao2Modal1 = $('#casa2').value;
+    valoecomissao2Modal1 = parseFloat(valoecomissao2Modal1);
     
     $('#comissao2').innerHTML = valoecomissao2Modal1 + '%';
     if (valoecomissao2Modal1 == 0) {
@@ -445,44 +319,11 @@ function casaDoisModal1() {
 }
 
 
-let valorselected3Modal1;
 let valoecomissao3Modal1 = 0;
 function casaTresModal1() {
     
-    valorselected3Modal1 = $('#casa3').value;
-
-    switch(valorselected3Modal1) {
-        case 'Selecione':
-            valoecomissao3Modal1 = 0;
-            break;
-        case 'Bet365':
-            valoecomissao3Modal1 = 0;
-            break;
-        case 'Nordeste Bola':
-            valoecomissao3Modal1 = 3;
-            break;
-        case 'Play Bets':
-            valoecomissao3Modal1 = 5;
-            break;
-        case 'TNT':
-            valoecomissao3Modal1 = 7;
-            break;
-        case 'Play Vip':
-            valoecomissao3Modal1 = 10;
-            break;
-        case 'Bets Bola':
-            valoecomissao3Modal1 = 10;
-            break;
-        case '999Bets':
-            valoecomissao3Modal1 = 10;
-            break;
-        case '999Vip':
-            valoecomissao3Modal1 = 15;
-            break;
-        case 'Porto Bet':
-            valoecomissao3Modal1 = 20;
-            break;
-    }
+    valoecomissao3Modal1 = $('#casa3').value;
+    valoecomissao3Modal1 = parseFloat(valoecomissao3Modal1);
     
     $('#comissao3').innerHTML = valoecomissao3Modal1 + '%';
     if (valoecomissao3Modal1 == 0) {
@@ -497,11 +338,10 @@ function casaTresModal1() {
 
 //manipulando o valor investido da 1° operação
 let valorInvestido1Modal1 = 0;
-let valorInvestido1TransfModal1 = 0;
 function TransfValorInvestidoModal1() {
 
     valorInvestido1Modal1 = $('#valorInvestido1').value;
-    valorInvestido1TransfModal1 = parseFloat(valorInvestido1Modal1)
+    valorInvestido1Modal1 = parseFloat(valorInvestido1Modal1)
 
     calculoGeralModal1()
     
@@ -510,33 +350,30 @@ function TransfValorInvestidoModal1() {
 
 //manipulando a odd da 1° operação
 let acharodd1Modal1 = 0;
-let odd1TransfModal1 = 0;
 function Transfodd1Modal1() {
 
     acharodd1Modal1 = $('#odd1').value;
-    odd1TransfModal1 = parseFloat(acharodd1Modal1)
+    acharodd1Modal1 = parseFloat(acharodd1Modal1)
 
     calculoGeralModal1()
 }
 
 //manipulando a odd da 2° operação
 let acharodd2Modal1 = 0;
-let odd2TransfModal1 = 0;
 function Transfodd2Modal1() {
 
     acharodd2Modal1 = $('#odd2').value;
-    odd2TransfModal1 = parseFloat(acharodd2Modal1)
+    acharodd2Modal1 = parseFloat(acharodd2Modal1)
 
     calculoGeralModal1()
 }
 
 //manipulando a odd da 3° operação
 let acharodd3Modal1 = 0;
-let odd3TransfModal1 = 0;
 function Transfodd3Modal1() {
 
     acharodd3Modal1 = $('#odd3').value;
-    odd3TransfModal1 = parseFloat(acharodd3Modal1)
+    acharodd3Modal1 = parseFloat(acharodd3Modal1)
 
     calculoGeralModal1()
 }
@@ -553,12 +390,12 @@ let comissaoOperacao3Modal1 = 0;
 function calculoGeralModal1() {
 
     //Calculando o Lucro da Operação 1 modal 1 (Valor Investido da Operação 1 X Odd Da Operação 1 ) e fazendo aparecer na tela
-    acharLucroCasa1Modal1 = valorInvestido1TransfModal1 * odd1TransfModal1;
+    acharLucroCasa1Modal1 = valorInvestido1Modal1 * acharodd1Modal1;
     if(isNaN(acharLucroCasa1Modal1)){
         $('#lucro1').innerHTML = `R$ 0,00`
     }else {
         $('#lucro1').innerHTML = `R$ ${acharLucroCasa1Modal1.toFixed(2)}`
-        if(acharLucroCasa1Modal1 < valorInvestido1TransfModal1) {
+        if(acharLucroCasa1Modal1 < valorInvestido1Modal1) {
             $('#lucro1').style.border = 'solid 1px var(--red-defalt)'
             $('#lucro1').style.color = 'var(--red-defalt)'
 
@@ -570,10 +407,10 @@ function calculoGeralModal1() {
 
 
     //Calculando o Valor ivestido da operação 2 modal 1 (Lucro da operação 1 / Pela odd da operação 2) e fazendo aparecer na tela
-    if(odd2TransfModal1 <=0) {
+    if(acharodd2Modal1 <=0) {
         $('#valorInvestido2').innerHTML = `R$ 0,00`
     }else {
-        valorInvestido2Modal1 = acharLucroCasa1Modal1 / odd2TransfModal1;
+        valorInvestido2Modal1 = acharLucroCasa1Modal1 / acharodd2Modal1;
     if(isNaN(valorInvestido2Modal1)){
         $('#valorInvestido2').innerHTML = `R$ 0,00`
     }else {
@@ -582,7 +419,7 @@ function calculoGeralModal1() {
     }
 
     //Calculando o lucro da operação 2 modal 1 (valor investido da operação 2 X odd da operação 2) e fazendo aparecer na tela
-    acharLucroCasa2Modal1 = valorInvestido2Modal1 * odd2TransfModal1;
+    acharLucroCasa2Modal1 = valorInvestido2Modal1 * acharodd2Modal1;
     if(isNaN(acharLucroCasa2Modal1)){
         $('#lucro2').innerHTML = `R$ 0,00`
     }else {
@@ -599,10 +436,10 @@ function calculoGeralModal1() {
 
 
      //Calculando o Valor ivestido da operação 3 modal 1 (Lucro da operação 2 / Pela odd da operação 3) e fazendo aparecer na tela
-     if(odd3TransfModal1 <=0) {
+     if(acharodd3Modal1 <=0) {
         $('#valorInvestido3').innerHTML = `R$ 0,00`
     }else {
-        valorInvestido3Modal1 = acharLucroCasa2Modal1 / odd3TransfModal1;
+        valorInvestido3Modal1 = acharLucroCasa2Modal1 / acharodd3Modal1;
     if(isNaN(valorInvestido3Modal1)){
         $('#valorInvestido3').innerHTML = `R$ 0,00`
     }else {
@@ -612,7 +449,7 @@ function calculoGeralModal1() {
     
 
     //Calculando o lucro da operação 2 modal 1 (valor investido da operação 2 X odd da operação 2) e fazendo aparecer na tela
-    acharLucroCasa3Modal1 = valorInvestido3Modal1 * odd3TransfModal1;
+    acharLucroCasa3Modal1 = valorInvestido3Modal1 * acharodd3Modal1;
     if(isNaN(acharLucroCasa3Modal1)){
         $('#lucro3').innerHTML = `R$ 0,00`
     }else {
@@ -630,7 +467,7 @@ function calculoGeralModal1() {
 
     //calculando o total do valor investido (Valor investido da operação 1 + Valor investido da operação 2 + Valor investido da operação 3) e fazendo aparecer na tela
 
-    totalInvestido = valorInvestido1TransfModal1 + valorInvestido2Modal1 + valorInvestido3Modal1;
+    totalInvestido = valorInvestido1Modal1 + valorInvestido2Modal1 + valorInvestido3Modal1;
     if(isNaN(totalInvestido)){
         $('#total-investido').innerHTML = `R$ 0,00`
     }else {
@@ -663,7 +500,7 @@ function calculoGeralModal1() {
     comissaoOperacao2 = valoecomissao2Modal1 / 100;
     comissaoOperacao3Modal1 = valoecomissao3Modal1 / 100;
 
-    comissaoTotal = comissaoOperacao1 * valorInvestido1TransfModal1 + comissaoOperacao2 * valorInvestido2Modal1 + comissaoOperacao3Modal1 * valorInvestido3Modal1
+    comissaoTotal = comissaoOperacao1 * valorInvestido1Modal1 + comissaoOperacao2 * valorInvestido2Modal1 + comissaoOperacao3Modal1 * valorInvestido3Modal1
     if(isNaN(comissaoTotal)){
         $('#comissao-total').innerHTML = `R$ 0,00`
     }else {
