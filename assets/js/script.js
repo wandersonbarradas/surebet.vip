@@ -126,7 +126,7 @@ function casaDois() {
 
     switch(valorselected2) {
         case 'Selecione':
-            valoecomissa2 = 0;
+            valoecomissao2 = 0;
             break;
         case 'Bet365':
             valoecomissao2 = 0;
