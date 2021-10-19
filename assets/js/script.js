@@ -95,7 +95,7 @@ function casaUm() {
         case 'Bets Bola':
             valoecomissao1 = 10;
             break;
-        case '999Bets':
+        case '999Bet':
             valoecomissao1 = 10;
             break;
         case '999Vip':
@@ -146,7 +146,7 @@ function casaDois() {
         case 'Bets Bola':
             valoecomissao2 = 10;
             break;
-        case '999Bets':
+        case '999Bet':
             valoecomissao2 = 10;
             break;
         case '999Vip':
