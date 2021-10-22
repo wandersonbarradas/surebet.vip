@@ -1,6 +1,6 @@
 //variaveis
 let $ = (el)=> document.querySelector(el);
-
+let $A = (el)=> document.querySelectorAll(el);
 
 
 //Fazendo menu aparecer
@@ -532,4 +532,69 @@ function calculoGeralModal1() {
             $('#lucro-comissao').style.color = 'var(--color-dark)'
         }
     }
+}
+
+
+
+//MODO NOTURNO
+
+function darkMode(){
+
+    if($('.container').classList.contains('darkMode') == false) {
+        $('body').classList.add('darkMode');
+        $('.container').classList.add('darkMode');
+        $('aside').classList.add('darkMode');
+        let x = $A('.template');
+        for (let i = 0; i < x.length; i++) {
+            x[i].style.backgroundColor = 'var(--color-darck)';
+        }
+        let xa = $A('.template .title');
+        for (let i = 0; i < xa.length; i++) {
+            xa[i].style.color = 'var(--color-light)';
+        }
+        let z = $A('.box-resultados');
+        for (let i = 0; i < z.length; i++) {
+            z[i].style.backgroundColor = 'var(--color-darck)';
+        }
+        let p = $A('.box-input');
+        for (let i = 0; i < p.length; i++) {
+            p[i].style.color = 'var(--color-darck)';
+        }
+        let h = $A('.item-menu');
+        for (let i = 0; i < h.length; i++) {
+            h[i].style.color = 'var(--color-light)';
+        }
+        
+    }else {
+        $('body').classList.remove('darkMode');
+        $('.container').classList.remove('darkMode');
+        $('aside').classList.remove('darkMode');
+        let x = $A('.template');
+        for (let i = 0; i < x.length; i++) {
+            x[i].style.backgroundColor = 'var(--color-light)';
+        }
+        let xa = $A('.template .title');
+        for (let i = 0; i < xa.length; i++) {
+            xa[i].style.color = 'var(--color-darck)';
+        }
+        let z = $A('.box-resultados');
+        for (let i = 0; i < z.length; i++) {
+            z[i].style.backgroundColor = 'var(--color-light)';
+        }
+        let h = $A('.item-menu');
+        for (let i = 0; i < h.length; i++) {
+            h[i].style.color = 'var(--color-darck)';
+        }    
+        
+    }
+
+
+        /*
+        $('container').classList.remove('lightMode');
+        $('container').classList.add('darkMode');
+    }else {
+        $('container').classList.remove('darkMode');
+        $('container').classList.add('lightMode');
+    }*/
+    
 }
